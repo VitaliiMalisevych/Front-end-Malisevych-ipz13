@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Селектори</title>
+    <style>
+        /* Групування селекторів */
+        h1, h2 {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 160%;
+            color: #000aff;
+        }
+
+        h2 {
+            font-size: 135%;
+            color: #aaaaaa;
+        }
+
+        /* Вкладені селектори */
+        #container p {
+            color: green;
+        }
+
+        /* Дочірній селектор */
+        #container > ul {
+            border: 1px solid black;
+        }
+
+        /* Суміжний селектор */
+        ul + p {
+            color: red;
+        }
+
+        /* Загальний братній селектор */
+        ul ~ p {
+            font-style: italic;
+        }
+
+        /* Селектор атрибутів */
+        a[title] {
+            color: blue;
+        }
+
+        /* Селектор атрибутів із частковим збігом */
+        a[href*="google"] {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Заголовок H1</h1>
+<h2>Заголовок H2</h2>
+
+<div id="container">
+    <ul>
+        <li>Пункт 1</li>
+        <li>Пункт 2</li>
+    </ul>
+    <p>Цей абзац зелений, бо він у #container</p>
+</div>
+
+<ul>
+    <li>Ще один список</li>
+</ul>
+<p>Цей абзац червоний (суміжний селектор)</p>
+<p>Цей теж стане курсивним (загальний братній селектор)</p>
+
+<a href="https://www.google.com" title="Google">Посилання на Google</a>
+<a href="https://www.apple.com/">Посилання на Apple</a>
+<a style="display: block; text-align: right" href="../lab1.html">На lab1</a>
+
+</body>
+</html>
