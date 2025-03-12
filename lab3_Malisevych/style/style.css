@@ -1,0 +1,12 @@
+table{
+    width: 100%;
+    text-align: center;
+}
+table td{
+    vertical-align: middle;
+}
+iframe{
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+}
