@@ -1,0 +1,61 @@
+body {
+    background-color: white;
+    background-image: url(../images/ramka.gif);
+    background-attachment: scroll;
+    background-repeat: repeat-y;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#page {
+    position: absolute;
+    top: 100px;
+    left: 49px;
+    width: 75%;
+    height: 120%;
+}
+
+.column {
+    position: absolute;
+    height: 120%;
+    padding: 10px;
+}
+
+#first-column {
+    width: 600px;
+    background-color: #ffcd9a;
+    background-image: url(../images/bg_menu.gif);
+    background-repeat: repeat-x;
+    background-position: center top;
+    border: 2px double red;
+    overflow-y: scroll;
+}
+
+#second-column {
+    margin-left: 610px;
+    width: 400px;
+    background-color: #ffcd9a;
+    background-image: url(../images/bg_menu.gif);
+    background-repeat: repeat-y;
+    background-position: top;
+    border: 2px double red;
+    overflow-y: scroll;
+}
+
+h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.column h4 {
+    font-style: italic;
+}
+
+p {
+    text-indent: 15px;
+}
+
+p .abzac {
+    text-indent: 15px;
+}
