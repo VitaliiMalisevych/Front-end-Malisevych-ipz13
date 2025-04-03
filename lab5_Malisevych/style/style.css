@@ -21,7 +21,6 @@ nav ul {
     padding: 0;
     text-align: center;
     background-color: #c2185b;
-    padding: 10px;
 }
 
 nav ul li {
@@ -74,11 +73,17 @@ img {
     margin: 10px auto;
     border-radius: 10px;
 }
+#contact {
+    text-align: center;
+    font-size: 1.2em;
+}
 
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #d81b60;
+    padding: 2px;
     color: white;
+    position: fixed;
     width: 100%;
+    bottom: 0;
+    background-color: #d81b60;
 }

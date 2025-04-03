@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf0f5;
+    transition: background-color 0.5s ease-in-out;
+}
+
+body:hover {
+    background-color: #fce4ec;
+}
+
+/* HEADER */
+header {
+    perspective: 800px;
+    text-align: center;
+    background-color: #d81b60;
+    color: white;
+    padding: 20px;
+    font-size: 2.5em;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+header:hover {
+    background-color: #c2185b;
+    transform: translateY(-5px);
+}
+
+header h1 {
+    transform-origin: center;
+    transition: transform 0.6s ease-in-out;
+}
+
+header h1:hover {
+    transform: rotateY(15deg) scale(1.1);
+}
+
+/* NAVIGATION */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    background-color: #c2185b;
+    transition: background-color 0.5s ease-in-out;
+}
+
+nav ul:hover {
+    background-color: #b71c50;
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li:hover {
+    transform: scale(1.1) skewY(-5deg);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #e91e63;
+}
+
+/* SECTIONS */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* LIST ITEMS */
+ul {
+    line-height: 1.8;
+}
+
+ul li {
+    font-size: 1.2em;
+    padding: 5px;
+    background-color: #f8bbd0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+ul li:hover {
+    transform: scale(1.1);
+}
+
+/* IMAGES */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+img:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* 3D TRANSFORMATION */
+#contact {
+    text-align: center;
+    font-size: 1.2em;
+    transform: perspective(600px) rotateX(10deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+#contact:hover {
+    transform: perspective(600px) rotateX(0deg) scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #d81b60;
+    transition: transform 0.5s ease-in-out;
+}
+
+footer:hover {
+    transform: scale(1.1);
+}
