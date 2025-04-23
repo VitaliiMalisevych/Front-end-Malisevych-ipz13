@@ -15,7 +15,6 @@
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    transform: rotate(-1deg);
 }
 .block-left img {
     max-width: 100%;
