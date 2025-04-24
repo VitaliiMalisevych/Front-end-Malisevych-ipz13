@@ -11,7 +11,6 @@ body:hover {
     background-color: #fce4ec;
 }
 
-/* HEADER */
 header {
     perspective: 800px;
     text-align: center;
@@ -38,7 +37,6 @@ header h1:hover {
     transform: rotateY(15deg) scale(1.1);
 }
 
-/* NAVIGATION */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -74,7 +72,6 @@ nav ul li a:hover {
     background-color: #e91e63;
 }
 
-/* SECTIONS */
 section {
     padding: 20px;
     margin: 20px;
@@ -89,7 +86,6 @@ section:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* LIST ITEMS */
 ul {
     line-height: 1.8;
 }
@@ -107,7 +103,6 @@ ul li:hover {
     transform: scale(1.1);
 }
 
-/* IMAGES */
 img {
     display: block;
     max-width: 100%;
@@ -121,7 +116,6 @@ img:hover {
     transform: rotate(10deg) scale(1.1);
 }
 
-/* 3D TRANSFORMATION */
 #contact {
     text-align: center;
     font-size: 1.2em;
@@ -133,7 +127,6 @@ img:hover {
     transform: perspective(600px) rotateX(0deg) scale(1.05);
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 2px;
