@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+fieldset {
+    margin: 20px;
+    padding: 10px;
+}
+
+label, input, textarea, select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+
+
+.text::before {
+    content: "🔹 Початок тексту: ";
+    color: blue;
+    font-weight: bold;
+}
+
+
+.text::after {
+    content: " 🔹 Кінець тексту.";
+    color: red;
+    font-weight: bold;
+}
+
+
+.text::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: darkblue;
+}
+
+
+.text::first-line {
+    color: green;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+
+a:link {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+a:visited {
+    color: purple;
+}
+
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    background-color: yellow;
+}
+
+
+a:active {
+    color: green;
+    font-size: 18px;
+}
+
+
+input:valid {
+    border: 2px solid green;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+p:first-child {
+    font-weight: bold;
+}
+
+input:nth-of-type(2) {
+    background-color: lightyellow;
+}
+
+input:checked + label {
+    font-weight: bold;
+    color: blue;
+}

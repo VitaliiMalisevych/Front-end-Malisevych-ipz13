@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example 11</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <p><a style="display: block; text-align: right;"  href="../lab11.html">Назад</a></p>
+</head>
+<body>
+<form>
+  <fieldset>
+    <legend>Основні елементи форми</legend>
+
+    <label for="text">Текстове поле:</label>
+    <input type="text" id="text" name="text" placeholder="Введіть текст"><br>
+
+    <label for="textarea">Багаторядкове поле:</label>
+    <textarea id="textarea" name="textarea" rows="4"></textarea><br>
+
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="range">Діапазон:</label>
+    <input type="range" id="range" name="range"><br>
+
+    <p>Оберіть варіант:</p>
+    <input type="radio" id="option1" name="radio" value="1" checked>
+    <label for="option1">Варіант 1</label>
+    <input type="radio" id="option2" name="radio" value="2">
+    <label for="option2">Варіант 2</label><br>
+
+    <p>Виберіть декілька опцій:</p>
+    <input type="checkbox" id="check1" name="check1">
+    <label for="check1">Опція 1</label>
+    <input type="checkbox" id="check2" name="check2">
+    <label for="check2">Опція 2</label><br>
+
+    <label for="select">Вибір із списку:</label>
+    <select id="select" name="select">
+      <optgroup label="Група 1">
+        <option value="1">Опція 1</option>
+        <option value="2">Опція 2</option>
+      </optgroup>
+      <optgroup label="Група 2">
+        <option value="3">Опція 3</option>
+        <option value="4">Опція 4</option>
+      </optgroup>
+    </select><br>
+
+    <label for="multi">Множинний вибір:</label>
+    <select id="multi" name="multi" multiple>
+      <option value="1">Опція 1</option>
+      <option value="2">Опція 2</option>
+      <option value="3">Опція 3</option>
+    </select><br>
+
+    <input type="reset" value="Очистити форму">
+    <input type="button" value="Click me!" onclick='alert("Oh, you have been clicked me!!!")'>
+  </fieldset>
+</form>
+</body>
+</html>
