@@ -137,3 +137,23 @@ body {
     text-align: center;
     max-width: 90%;
 }
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує по горизонталі */
+    justify-content: center;
+    gap: 16px;
+}
+
+.contacts img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px; /* опціонально, для краси */
+}
+
+.contacts span {
+    color: white; /* або інший колір, щоб читалось */
+    font-family: monospace;
+    font-size: 1.2em;
+}
