@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: #0C104D;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.screen {
+    width: 1280px;
+    height: 832px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+.text {
+    position: absolute;
+    top: 248px;
+    left: 89px;
+    font-size: 25px;
+    white-space: pre-line;
+}
+
+.hero-img {
+    width: 310px;
+    height: 364px;
+    position: absolute;
+    top: 125px;
+    left: 880px;
+}
+
+.buttons {
+    position: absolute;
+    top: 591px;
+    left: 136px;
+    display: flex;
+    gap: 75px;
+}
+
+.btn {
+    display: inline-block;
+    width: 285px;
+    height: 46px;
+    background-color: #007BFF;
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    line-height: 46px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #339EFF;
+}
+
+#about h2,
+#portfolio h2,
+#contact h2 {
+    position: absolute;
+    top: 160px;
+    left: 66px;
+    font-size: 25px;
+}
+
+.about-img {
+    position: absolute;
+    top: 206px;
+    left: 47px;
+    width: 191px;
+    height: 271px;
+}
+
+.about-text {
+    position: absolute;
+    top: 240px;
+    left: 314px;
+    width: 504px;
+    font-size: 20px;
+}
+
+.about-logo {
+    position: absolute;
+    top: 206px;
+    left: 894px;
+    width: 301px;
+    height: 294px;
+}
+
+.portfolio-images {
+    position: absolute;
+    top: 298px;
+    left: 8px;
+    display: flex;
+    gap: 53px;
+}
+
+.portfolio-images img {
+    width: 386px;
+    height: 279px;
+}
+
+.arrow {
+    position: absolute;
+    top: 56px;
+    left: 1192px;
+    font-size: 32px;
+    color: black;
+    background: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.arrow:hover {
+    background-color: #339EFF;
+    transform: scale(1.1);
+}
+
+.contact-row {
+    position: absolute;
+    left: 525px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 25px;
+}
+
+.contact-row:nth-child(2) { top: 218px; }
+.contact-row:nth-child(3) { top: 330px; }
+.contact-row:nth-child(4) { top: 442px; }
+.contact-row:nth-child(5) { top: 554px; }
+
+.contact-row img {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+}

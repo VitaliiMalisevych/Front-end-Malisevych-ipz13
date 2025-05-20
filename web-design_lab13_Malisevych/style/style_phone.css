@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #0C104D;
+    color: white;
+}
+.container {
+    width: 100%;
+    max-width: 1280px;
+    height: 832px;
+    margin: auto;
+    position: relative;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}
+.logo {
+    position: absolute;
+    top: 125px;
+    right: 120px;
+}
+.intro-text {
+    position: absolute;
+    top: 248px;
+    left: 89px;
+    font-size: 25px;
+    white-space: pre-line;
+}
+.nav-buttons {
+    position: absolute;
+    bottom: 100px;
+    left: 89px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.nav-buttons a,
+.menu-nav a {
+    background: #007BFF;
+    color: black;
+    padding: 10px 40px;
+    font-size: 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+.nav-buttons a:hover,
+.menu-nav a:hover {
+    background: #0056b3;
+}
+.photo {
+    position: absolute;
+    top: 206px;
+    left: 47px;
+}
+.description {
+    position: absolute;
+    top: 240px;
+    left: 314px;
+    width: 504px;
+    font-size: 20px;
+}
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.contacts {
+    position: absolute;
+    top: 218px;
+    left: 525px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 25px;
+}
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 200px;
+    align-items: center;
+}

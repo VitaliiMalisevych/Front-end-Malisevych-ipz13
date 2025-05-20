@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+}
+
+header {
+    background: #111;
+    color: white;
+}
+
+#header-top {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Birch Std", serif;
+    align-items: center;
+    padding: 10px;
+}
+
+#logo {
+    font-size: 20px;
+}
+
+#logo span {
+    font-weight: bold;
+}
+
+#search input {
+    padding: 5px;
+}
+
+#search button {
+    padding: 5px;
+}
+
+#banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background: #000;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+main h1, h2 {
+    color: #444;
+}
+
+.images img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
+
+.lists {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+table, th, td {
+    border: 1px solid #aaa;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+    width: 300px;
+    padding: 5px;
+}
+
+button {
+    background: #111;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: left;
+    font-size: 12px;
+    margin-top: 40px;
+}
