@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Інтернет-магазин косметики</title>
+  <meta name="description" content="Онлайн-магазин косметики. Новинки, акції, засоби для догляду та макіяжу">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<p><a href="../../index.html">На головну</a></p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">CosmoShop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Головна</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Каталог</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Категорії</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Помади</a></li>
+            <li><a class="dropdown-item" href="#">Туші</a></li>
+            <li><a class="dropdown-item" href="#">Парфуми</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Контакти</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/dekorativnaya-kosmetika-podarok.jpg" class="d-block w-100" alt="Новинки сезону">
+    </div>
+    <div class="carousel-item">
+      <img src="images/6550415610_w600_h300_6550415610.webp" class="d-block w-100" alt="Акції та пропозиції">
+    </div>
+    <div class="carousel-item">
+      <img src="images/1042.970.jpg" class="d-block w-100" alt="Догляд за шкірою">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Нова колекція</h2>
+      <p>Ознайомтеся з новими трендами в макіяжі та догляді.</p>
+      <button class="btn btn-primary">Дізнатися більше</button>
+    </div>
+    <div class="col-md-6">
+      <h2>Хіти продажу</h2>
+      <p>Популярні товари, які обирають тисячі клієнтів щомісяця.</p>
+      <button class="btn btn-success">Переглянути</button>
+    </div>
+    <div class="col-md-2">
+      <h2>Акції</h2>
+      <p>Вигідні пропозиції обмеженого часу!</p>
+      <button class="btn btn-warning">Купити</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/imagespom.jpeg" class="card-img-top" alt="Помада">
+        <div class="card-body">
+          <h5 class="card-title">Червона помада</h5>
+          <p class="card-text">Класика, яка пасує кожній жінці.</p>
+          <button class="btn btn-outline-primary">Детальніше</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/top-view-mascara-space-700x700.webp" class="card-img-top" alt="Туш">
+        <div class="card-body">
+          <h5 class="card-title">Обʼємна туш</h5>
+          <p class="card-text">Вигляд салонного макіяжу кожного дня.</p>
+          <button class="btn btn-outline-success">Детальніше</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/shopping.webp" class="card-img-top" alt="Парфум">
+        <div class="card-body">
+          <h5 class="card-title">Аромат Moonlight</h5>
+          <p class="card-text">Легкий квітковий аромат для вечора.</p>
+          <button class="btn btn-outline-danger">Детальніше</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-4" id="contact">
+  <h2>Підписка на новини</h2>
+  <form>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Ваша електронна пошта">
+    </div>
+    <button type="submit" class="btn btn-success">Підписатися</button>
+  </form>
+</div>
+
+<footer class="bg-light py-3 mt-4">
+  <div class="container text-center">
+    <p>&copy; 2025 CosmoShop. Усі права захищені.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

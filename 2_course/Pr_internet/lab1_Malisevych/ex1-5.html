@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 1</title>
+</head>
+<body>
+<a style="display: block; text-align: left" href="prew_lab1_Malisevych.html">На lab1</a>
+<h3> Завдання 1.</H3>
+<p> Це звичайний HTML абзац.</p>
+<script language="JavaScript">
+  document.write("Привіт! Мене звати Віталій Малісевич, студент групи ІПЗ-23.");
+</script>
+<p>Знову звичайний HTML абзац.</p>
+<form>
+  <input type="button" value="Click me" onClick="alert('Я народився 24.03.2007 року в місті Івано-Франківськ ')">
+</form>
+
+<h3> Завдання 2.</H3>
+
+<script language="javascript">
+  function example2 (){
+    let x = 1;
+    let y = 2;
+    let z = 3;
+    let yz = Math.pow(y, z);
+    let xyz = Math.pow(x, yz);
+    let f = xyz + (2 * x * z);
+    alert(f);
+  }
+</script>
+
+<form>
+  <input type="button" value="Calculate" onclick="example2()" >
+</form>
+
+<h3> Завдання 3.</H3>
+
+<p>Демонстрація подій <code>onClick</code> та <code>onChange</code></p>
+
+<form>
+  <label>Поле для взаємодії:
+    <input type="text" id="interactiveField" value="Клік або зміни текст"
+           onclick="example3('Подія: onClick — клік на полі')"
+           onchange="example3('Подія: onChange — текст змінено')">
+  </label><br><br>
+
+  <label>Поле для повідомлень:<br>
+    <textarea id="messageField" rows="3" cols="50"></textarea>
+  </label>
+</form>
+
+<script>
+  function example3(msg) {
+    document.getElementById("messageField").value = msg;
+  }
+</script>
+
+<h3> Завдання 4.</H3>
+
+<script language="javascript">
+    function example4()
+    {
+        let x, y, f;
+        x = parseInt(form_ex4.t_x.value);
+        y = parseInt(form_ex4.t_y.value);
+        if (x * y > 0){
+            f = 3 * x * y - x;
+        } else if (7 * x > 2 * y || y > 2) {
+            f = (2 * x - 3 * y) / x;
+        }else {
+            f = x - y;
+        }
+        form_ex4.t_f.value = "" + f;
+    }
+
+</script>
+
+
+
+<form id="form_ex4">
+    x<input type="text" id = "t_x" value=""><br>
+    y<input type="text" id = "t_y" value=""><br>
+    f<input type="text" id = "t_f" value=""><br>
+
+    <input type = "button" onClick = "example4();" value = "Розрахувати">
+</form>
+
+<h3> Завдання 5.</H3>
+
+<script language="javascript">
+    function example5(){
+            // рахуємо факторіал (x+y)
+            let x, y;
+            x = parseInt(form_ex5.b_x.value);
+            y = parseInt(form_ex5.b_y.value);
+            let fact = 1;
+            for (let j = 1; j <= x + y; j++) {
+                fact *= j;
+            }
+
+            // рахуємо суму
+            let sum = 0;
+            for (let i = 1; i <= 12; i++) {
+                sum += Math.pow(-1, i + 1) * (i + 3) / fact;
+            }
+            form_ex5.b_f.value = "" + sum;
+    }
+</script>
+
+<form id="form_ex5">
+    x<input type="text" id = "b_x" value=""><br>
+    y<input type="text" id = "b_y" value=""><br>
+    sum<input type="text" id = "b_f" value=""><br>
+
+    <input type = "button" onClick = "example5();" value = "Розрахувати">
+</form>
+
+
+</body>
+</html>

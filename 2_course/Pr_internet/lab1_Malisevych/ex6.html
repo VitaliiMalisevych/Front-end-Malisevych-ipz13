@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>lab1_ex56</title>
+</head>
+<body>
+<a style="display: block; text-align: left" href="prew_lab1_Malisevych.html">На lab1</a>
+
+
+  <script>
+    let product = ["Зошит", "Зоря", "Зефир"];
+    let quantity = [105, 50, 300];
+    let cost = [26, 100, 15.5];
+
+    // змінна для збереження індекса вибраного товару
+    let currentIndex = -1;
+
+    function fun1() {
+      let name = document.form1.name_cont.value.trim();
+      currentIndex = -1; // скидати індекс перед пошуком
+      for (let i = 0; i < product.length; i++) {
+        if (name.toLowerCase() === product[i].toLowerCase()) {
+          currentIndex = i;
+          document.form1.output_quantity.value = "Наявна кількість: " + quantity[i];
+          document.form1.output_cost.value = "Вартість за одиницю: " + cost[i] + " грн";
+          return;
+        }
+      }
+      // якщо товар не знайдено
+      document.form1.output_quantity.value = "Товар не знайдено!";
+      document.form1.output_cost.value = "";
+    }
+
+    function fun2() {
+      if (currentIndex !== -1) {
+        let total = quantity[currentIndex] * cost[currentIndex];
+        document.form1.output_total.value = "Загальна сума: " + total.toFixed(2) + " грн";
+      } else {
+        document.form1.output_total.value = "Спочатку знайдіть товар!";
+      }
+    }
+  </script>
+<h2>Магазин – пошук товару</h2>
+<form name="form1">
+  Введіть назву товару:
+  <input type="text" name="name_cont"><br><br>
+
+  <input type="button" value="Наявна кількість і вартість" onclick="fun1()">
+  <input type="button" value="Загальна сума" onclick="fun2()"><br><br>
+
+  <input type="text" size="50" name="output_quantity" readonly><br>
+  <input type="text" size="50" name="output_cost" readonly><br>
+  <input type="text" size="50" name="output_total" readonly><br>
+</form>
+</body>
+</html>

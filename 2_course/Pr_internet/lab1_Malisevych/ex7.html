@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Товари на складі</title>
+  <script>
+    let product = ["Зошит", "Зоря", "Зефир"];
+    let quantity = [105, 50, 300];
+    let cost = [26, 100, 15.5];
+
+    let currentIndex = -1;
+
+    function fun1() {
+      currentIndex = document.form2.select_product.selectedIndex;
+      document.form2.output_quantity.value = "Наявна кількість: " + quantity[currentIndex];
+      document.form2.output_cost.value = "Вартість за одиницю: " + cost[currentIndex] + " грн";
+    }
+
+    function fun2() {
+      if (currentIndex !== -1) {
+        let total = quantity[currentIndex] * cost[currentIndex];
+        document.form2.output_total.value = "Загальна сума: " + total.toFixed(2) + " грн";
+      } else {
+        document.form2.output_total.value = "Спочатку виберіть товар!";
+      }
+    }
+  </script>
+</head>
+<body>
+<a style="display: block; text-align: left" href="prew_lab1_Malisevych.html">На lab1</a>
+<h2>Магазин – вибір товару</h2>
+<form name="form2">
+  Виберіть товар:
+  <select name="select_product">
+    <option>Зошит</option>
+    <option>Зоря</option>
+    <option>Зефир</option>
+  </select><br><br>
+
+  <input type="button" value="Наявна кількість і вартість" onclick="fun1()">
+  <input type="button" value="Загальна сума" onclick="fun2()"><br><br>
+
+  <input type="text" size="50" name="output_quantity" readonly><br>
+  <input type="text" size="50" name="output_cost" readonly><br>
+  <input type="text" size="50" name="output_total" readonly><br>
+</form>
+</body>
+</html>
