@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Калькулятор</title>
+  <style>
+    body { font-family: Arial; text-align: center; }
+    .calc { display: inline-block; border: 2px solid #333; padding: 10px; border-radius: 8px; }
+    input { width: 160px; height: 30px; font-size: 18px; text-align: right; margin-bottom: 10px; }
+    button { width: 40px; height: 40px; font-size: 18px; margin: 2px; }
+  </style>
+</head>
+<body>
+<a style="display: block; text-align: left" href="../lab2_index.html">На lab2</a>
+<br>
+<h2>Простий калькулятор</h2>
+<div class="calc">
+  <input type="text" id="display" ><br>
+  <div>
+    <button onclick="addSymbol('7')">7</button>
+    <button onclick="addSymbol('8')">8</button>
+    <button onclick="addSymbol('9')">9</button>
+    <button onclick="addSymbol('/')">/</button><br>
+
+    <button onclick="addSymbol('4')">4</button>
+    <button onclick="addSymbol('5')">5</button>
+    <button onclick="addSymbol('6')">6</button>
+    <button onclick="addSymbol('*')">*</button><br>
+
+    <button onclick="addSymbol('1')">1</button>
+    <button onclick="addSymbol('2')">2</button>
+    <button onclick="addSymbol('3')">3</button>
+    <button onclick="addSymbol('-')">-</button><br>
+
+    <button onclick="addSymbol('0')">0</button>
+    <button onclick="addSymbol('.')">.</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="addSymbol('+')">+</button><br>
+
+    <button onclick="clearDisplay()" style="width: 170px;">C</button>
+  </div>
+</div>
+
+<script src="../JS/index.js"></script>
+</body>
+</html>
