@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>example6</title>
+</head>
+<body>
+<a style="display: block; text-align: left" href="../lab3_prev.html">На lab3</a>
+<br>
+<h2>example6</h2>
+<ul>
+    <li onclick="toggle(this)">Фрукти
+        <ul style="display:none;">
+            <li>Яблука</li>
+            <li>Персики</li>
+            <li>Абрикоси</li>
+            <li>Грушки</li>
+            <li>Лимони</li>
+        </ul>
+    </li>
+    <li onclick="toggle(this)">Овочі
+        <ul style="display:none;">
+            <li>Картопля</li>
+            <li>Морква</li>
+            <li>Капуста</li>
+            <li>Буряк</li>
+            <li>Огірки</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    function toggle(el) {
+        let ul = el.querySelector("ul");
+        if (ul) {
+            ul.style.display = (ul.style.display === "none") ? "block" : "none";
+        }
+    }
+</script>
+</body>
+</html>
