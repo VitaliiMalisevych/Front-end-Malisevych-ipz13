@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>lab4</title>
+</head>
+<body>
+<a style="display: block; text-align: left" href="../../Pr-index.html">На головну</a>
+<h2>Тестування з JavaScript</h2>
+
+<form id="testForm">
+
+    <div class="question">
+        <p><b>1. Хто створив мову JavaScript?</b></p>
+        <label><input type="radio" name="q1" value="1"> Брендан Айк</label><br>
+        <label><input type="radio" name="q1" value="0"> Білл Гейтс</label><br>
+        <label><input type="radio" name="q1" value="0"> Стів Джобс</label><br>
+        <label><input type="radio" name="q1" value="0"> Джеймс Гослінг</label>
+    </div>
+
+    <div class="question">
+        <p><b>2. У якому році з’явився JavaScript?</b></p>
+        <label><input type="radio" name="q2" value="1"> 1995</label><br>
+        <label><input type="radio" name="q2" value="0"> 1985</label><br>
+        <label><input type="radio" name="q2" value="0"> 2005</label><br>
+        <label><input type="radio" name="q2" value="0"> 2015</label>
+    </div>
+
+    <div class="question">
+        <p><b>3. Які з наведених є типами даних у JavaScript?</b></p>
+        <label><input type="checkbox" name="q3" value="1"> Number</label><br>
+        <label><input type="checkbox" name="q3" value="1"> String</label><br>
+        <label><input type="checkbox" name="q3" value="0"> Integer</label><br>
+        <label><input type="checkbox" name="q3" value="0"> Character</label>
+    </div>
+
+    <div class="question">
+        <p><b>4. Які методи належать до масиву (Array)?</b></p>
+        <label><input type="checkbox" name="q4" value="1"> push()</label><br>
+        <label><input type="checkbox" name="q4" value="1"> pop()</label><br>
+        <label><input type="checkbox" name="q4" value="0"> add()</label><br>
+        <label><input type="checkbox" name="q4" value="0"> insert()</label>
+    </div>
+
+    <div class="question">
+        <p><b>5. Який оператор використовується для порівняння без приведення типів?</b></p>
+        <select name="q5">
+            <option value="0">=</option>
+            <option value="0">==</option>
+            <option value="1">===</option>
+            <option value="0">!=</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p><b>6. Які події належать до елементів введення?</b></p>
+        <select name="q6" multiple size="4">
+            <option value="1">onchange</option>
+            <option value="1">oninput</option>
+            <option value="0">onhover</option>
+            <option value="0">onexit</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p><b>7. Введіть скорочення для Document Object Model:</b></p>
+        <input type="text" name="q7">
+    </div>
+
+    <button type="button" onclick="finishTest()">Завершити тестування</button>
+</form>
+
+<div id="result"></div>
+
+<script src="../js/ex4.js"></script>
+
+</body>
+</html>
