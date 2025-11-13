@@ -24,6 +24,13 @@
         document.form2.output_total.value = "Спочатку виберіть товар!";
       }
     }
+    function fun3() {
+      if (document.form2.name_cont.value < quantity[currentIndex]) {
+        alert('Товар додано')
+      } else {
+        alert('Товар не додано')
+      }
+    }
   </script>
 </head>
 <body>
@@ -43,6 +50,13 @@
   <input type="text" size="50" name="output_quantity" readonly><br>
   <input type="text" size="50" name="output_cost" readonly><br>
   <input type="text" size="50" name="output_total" readonly><br>
+  Введіть кількість товару:
+  <input type="text" name="name_cont"><br><br>
+
+  <br>
+  <br>
+  <input type="button" value="Купити" onclick="fun3()"><br><br>
+
 </form>
 </body>
 </html>

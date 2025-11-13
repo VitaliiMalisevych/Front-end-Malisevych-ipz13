@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 2.2</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    label { display: block; margin-top: 10px; }
+    input { padding: 5px; width: 250px; }
+    button { margin-top: 15px; padding: 7px 15px; }
+    .error { color: red; margin-top: 10px; }
+    .success { color: green; margin-top: 10px; }
+  </style>
+</head>
+<body>
+<a style="display: block; text-align: left" href="lab6_prev.html">На lab6</a>
+
+
+<form id="checkForm">
+  <label>E-mail:
+    <input type="text" id="email" placeholder="example@mail.com">
+  </label>
+  <label>Ім’я та прізвище:
+    <input type="text" id="name" placeholder="Іван Петренко">
+  </label>
+  <label>Логін:
+    <input type="text" id="login" placeholder="ivan123">
+  </label>
+  <label>Пароль:
+    <input type="password" id="password" placeholder="********">
+  </label>
+  <label>Поштовий індекс:
+    <input type="text" id="index" placeholder="76000">
+  </label>
+  <label>Номер телефону:
+    <input type="text" id="phone" placeholder="+380671234567">
+  </label>
+  <label>Дата народження:
+    <input type="text" id="birth" placeholder="ДД.ММ.РРРР">
+  </label>
+  <label>Номер автомобіля:
+    <input type="text" id="car" placeholder="AA1234BB">
+  </label>
+  <button type="button" onclick="validateForm()">Перевірити</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  function validateForm() {
+    const email = document.getElementById("email").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const login = document.getElementById("login").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const index = document.getElementById("index").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const birth = document.getElementById("birth").value.trim();
+    const car = document.getElementById("car").value.trim();
+    const result = document.getElementById("result");
+
+    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+    const nameRegex = /^[А-Яа-яЇїІіЄєҐґA-Za-z\s'-]{2,}$/;
+    const loginRegex = /^[a-zA-Z0-9_]{4,20}$/;
+    const passwordRegex = /^[A-Za-z0-9!@#$%^&*()_+=-]{6,}$/;
+    const indexRegex = /^[0-9]{5}$/;
+    const phoneRegex = /^\+?380\d{9}$/;
+    const birthRegex = /^(0[1-9]|[12]\d|3[01])\.(0[1-9]|1[0-2])\.(19|20)\d{2}$/;
+    const carRegex = /^[A-ZА-ЯІЇЄ]{2}\d{4}[A-ZА-ЯІЇЄ]{2}$/i;
+
+    let errors = [];
+
+    if (!emailRegex.test(email)) errors.push(" Невірний формат e-mail");
+    if (!nameRegex.test(name)) errors.push(" Некоректне ім’я або прізвище");
+    if (!loginRegex.test(login)) errors.push(" Логін повинен містити 4–20 символів (латиниця або цифри)");
+    if (!passwordRegex.test(password)) errors.push(" Пароль має містити мінімум 6 символів");
+    if (!indexRegex.test(index)) errors.push(" Поштовий індекс має складатися з 5 цифр");
+    if (!phoneRegex.test(phone)) errors.push(" Телефон має бути у форматі +380XXXXXXXXX");
+    if (!birthRegex.test(birth)) errors.push(" Дата народження має бути у форматі ДД.ММ.РРРР");
+    if (!carRegex.test(car)) errors.push(" Номер авто має бути у форматі AA1234BB");
+
+    if (errors.length > 0) {
+      result.innerHTML = "<div class='error'>" + errors.join("<br>") + "</div>";
+    } else {
+      result.innerHTML = "<div class='success'> Усі дані введено правильно!</div>";
+    }
+  }
+</script>
+
+</body>
+</html>

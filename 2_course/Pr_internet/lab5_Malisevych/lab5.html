@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolContent</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #666; /* темно-сірий фон */
+            font-family: "Andale Mono", monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #tabbed_box {
+            text-align: left;
+        }
+
+        h1 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        ul.tabs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        ul.tabs li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 6px 10px;
+            border-radius: 5px 5px 0 0;
+            background: #444;
+            transition: 0.2s;
+        }
+
+        ul.tabs li a:hover {
+            background: #555;
+        }
+
+        ul.tabs li a.active {
+            background: darkred;
+            color: white;
+        }
+
+        .content-box {
+            background: #d9d9d9;
+            border: 10px solid darkred;
+            width: 450px;
+            height: 350px;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content p {
+            margin: 15px 0;
+            border-bottom: 1px solid #333;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="tabbed_box">
+    <h1>CoolContent</h1>
+    <ul class="tabs">
+        <li><a href="javascript:tabSwitch('tab_1','content_1');" id="tab_1" class="active">Archives</a></li>
+        <li><a href="javascript:tabSwitch('tab_2','content_2');" id="tab_2">Topics</a></li>
+        <li><a href="javascript:tabSwitch('tab_3','content_3');" id="tab_3">Pages</a></li>
+    </ul>
+
+    <div class="content-box">
+        <div id="content_1" class="content active">
+            <p>Archive item 1</p>
+            <p>Archive item 2</p>
+            <p>Archive item 3</p>
+            <p>Archive item 4</p>
+            <p>Archive item 5</p>
+        </div>
+
+        <div id="content_2" class="content">
+            <p>Topic A</p>
+            <p>Topic B</p>
+            <p>Topic C</p>
+            <p>Topic D</p>
+            <p>Topic E</p>
+        </div>
+
+        <div id="content_3" class="content">
+            <p>Page 1</p>
+            <p>Page 2</p>
+            <p>Page 3</p>
+            <p>Page 4</p>
+            <p>Page 5</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function tabSwitch(new_tab, new_content) {
+        document.getElementById('tab_1').classList.remove('active');
+        document.getElementById('tab_2').classList.remove('active');
+        document.getElementById('tab_3').classList.remove('active');
+
+        document.getElementById('content_1').classList.remove('active');
+        document.getElementById('content_2').classList.remove('active');
+        document.getElementById('content_3').classList.remove('active');
+
+        document.getElementById(new_tab).classList.add('active');
+        document.getElementById(new_content).classList.add('active');
+    }
+</script>
+
+</body>
+</html>

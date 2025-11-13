@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 2.1</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    label { display: block; margin-top: 10px; }
+    input { padding: 5px; width: 250px; }
+    button { margin-top: 15px; padding: 7px 15px; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+<a style="display: block; text-align: left" href="lab6_prev.html">На lab6</a>
+
+
+<form id="checkForm">
+  <label>E-mail:
+    <input type="text" id="email" placeholder="example@mail.com">
+  </label>
+  <label>Ім’я та прізвище:
+    <input type="text" id="name" placeholder="Іван Петренко">
+  </label>
+  <label>Логін:
+    <input type="text" id="login" placeholder="ivan123">
+  </label>
+  <label>Пароль:
+    <input type="password" id="password" placeholder="********">
+  </label>
+  <label>Поштовий індекс:
+    <input type="text" id="index" placeholder="76000">
+  </label>
+  <button type="button" onclick="validateForm()">Перевірити</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  function validateForm() {
+    const email = document.getElementById("email").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const login = document.getElementById("login").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const index = document.getElementById("index").value.trim();
+    const result = document.getElementById("result");
+
+    // Регулярні вирази
+    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+    const nameRegex = /^[А-Яа-яЇїІіЄєҐґA-Za-z\s'-]{2,}$/;
+    const loginRegex = /^[a-zA-Z0-9_]{4,20}$/;
+    const passwordRegex = /^[A-Za-z0-9!@#$%^&*()_+=-]{6,}$/;
+    const indexRegex = /^[0-9]{5}$/;
+
+    let errors = [];
+
+    if (!emailRegex.test(email)) errors.push("Невірний формат e-mail");
+    if (!nameRegex.test(name)) errors.push("Некоректне ім’я або прізвище");
+    if (!loginRegex.test(login)) errors.push("Логін повинен містити 4–20 символів (латиниця або цифри)");
+    if (!passwordRegex.test(password)) errors.push("Пароль має містити мінімум 6 символів");
+    if (!indexRegex.test(index)) errors.push("Поштовий індекс має складатися з 5 цифр");
+
+    if (errors.length > 0) {
+      result.innerHTML = "<span class='error'>" + errors.join("<br>") + "</span>";
+    } else {
+      result.innerHTML = "<b style='color:green'>Дані введено правильно </b>";
+    }
+  }
+</script>
+
+</body>
+</html>

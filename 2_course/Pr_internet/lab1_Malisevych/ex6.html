@@ -13,12 +13,11 @@
     let quantity = [105, 50, 300];
     let cost = [26, 100, 15.5];
 
-    // змінна для збереження індекса вибраного товару
     let currentIndex = -1;
 
     function fun1() {
       let name = document.form1.name_cont.value.trim();
-      currentIndex = -1; // скидати індекс перед пошуком
+      currentIndex = -1;
       for (let i = 0; i < product.length; i++) {
         if (name.toLowerCase() === product[i].toLowerCase()) {
           currentIndex = i;
@@ -27,7 +26,6 @@
           return;
         }
       }
-      // якщо товар не знайдено
       document.form1.output_quantity.value = "Товар не знайдено!";
       document.form1.output_cost.value = "";
     }

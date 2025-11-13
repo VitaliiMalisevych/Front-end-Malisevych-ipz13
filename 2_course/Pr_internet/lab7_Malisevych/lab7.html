@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна робота №7 - Робота з рядками (JavaScript)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f6f8;
+      color: #222;
+      margin: 40px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .task {
+      background: white;
+      border-radius: 12px;
+      padding: 15px 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    input, button {
+      margin: 5px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p.result {
+      background: #eef4ff;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+<a style="display: block; text-align: left" href="../Pr-index.html">На головну</a>
+
+<h2>Робота з рядками в JavaScript</h2>
+
+<div class="task">
+  <h3>Завдання 1: Довжина рядка</h3>
+  <input type="text" id="t1" placeholder="Введіть рядок">
+  <button onclick="task1()">Обчислити</button>
+  <p class="result" id="r1"></p>
+</div>
+
+<div class="task">
+  <h3>Завдання 2: Верхній та нижній регістр</h3>
+  <input type="text" id="t2" placeholder="Введіть рядок">
+  <button onclick="task2()">Перетворити</button>
+  <p class="result" id="r2"></p>
+</div>
+
+<div class="task">
+  <h3>Завдання 3: Індекс першого входження символу</h3>
+  <input type="text" id="t3str" placeholder="Рядок">
+  <input type="text" id="t3ch" placeholder="Символ" maxlength="1">
+  <button onclick="task3()">Знайти</button>
+  <p class="result" id="r3"></p>
+</div>
+
+<div class="task">
+  <h3>Завдання 4: Кількість входжень символу</h3>
+  <input type="text" id="t4str" placeholder="Рядок">
+  <input type="text" id="t4ch" placeholder="Символ" maxlength="1">
+  <button onclick="task4()">Порахувати</button>
+  <p class="result" id="r4"></p>
+</div>
+
+<div class="task">
+  <h3>Завдання 5: Міняє місцями сусідні символи</h3>
+  <input type="text" id="t5" placeholder="Введіть рядок">
+  <button onclick="task5()">Перетворити</button>
+  <p class="result" id="r5"></p>
+</div>
+
+<div class="task">
+  <h3>Завдання 6: Перевірка на спам</h3>
+  <input type="text" id="t6" placeholder="Введіть текст">
+  <button onclick="task6()">Перевірити</button>
+  <p class="result" id="r6"></p>
+</div>
+
+<div class="task">
+  <h3>Завдання 7: Скорочення рядка (truncate)</h3>
+  <input type="text" id="t7str" placeholder="Рядок">
+  <input type="number" id="t7len" placeholder="Макс. довжина">
+  <button onclick="task7()">Скоротити</button>
+  <p class="result" id="r7"></p>
+</div>
+
+
+<div class="task">
+  <h3>Завдання 8.10: Символи з парними індексами</h3>
+  <input type="text" id="t810" placeholder="Введіть рядок">
+  <button onclick="task810()">Виконати</button>
+  <p class="result" id="r810"></p>
+</div>
+
+
+<div class="task">
+  <h3>Завдання 9.10: Поміняти місцями два символи</h3>
+  <input type="text" id="t910str" placeholder="Рядок">
+  <input type="text" id="t910a" placeholder="Символ 1" maxlength="1">
+  <input type="text" id="t910b" placeholder="Символ 2" maxlength="1">
+  <button onclick="task910()">Виконати</button>
+  <p class="result" id="r910"></p>
+</div>
+
+<div class="task">
+  <h3>Завдання 10.10: Підрядок з однакових символів</h3>
+  <input type="text" id="t1010" placeholder="Введіть рядок">
+  <button onclick="task1010()">Перевірити</button>
+  <p class="result" id="r1010"></p>
+</div>
+
+<script>
+  function task1() {
+    const s = document.getElementById("t1").value;
+    document.getElementById("r1").innerText = "Довжина: " + s.length;
+  }
+
+  function task2() {
+    const s = document.getElementById("t2").value;
+    document.getElementById("r2").innerHTML =
+            "Верхній регістр: " + s.toUpperCase() + "<br>Нижній регістр: " + s.toLowerCase();
+  }
+
+  function task3() {
+    const s = document.getElementById("t3str").value;
+    const ch = document.getElementById("t3ch").value;
+    const idx = s.indexOf(ch);
+    document.getElementById("r3").innerText = "Індекс: " + idx;
+  }
+
+  function task4() {
+    const s = document.getElementById("t4str").value;
+    const ch = document.getElementById("t4ch").value;
+    const count = s.split(ch).length - 1;
+    document.getElementById("r4").innerText = `Кількість входжень: ${count}`;
+  }
+
+  function task5() {
+    const s = document.getElementById("t5").value;
+    let res = "";
+    for (let i = 0; i < s.length; i += 2) {
+      res += (s[i+1] || '') + s[i];
+    }
+    document.getElementById("r5").innerText = res;
+  }
+
+  function task6() {
+    const s = document.getElementById("t6").value.toLowerCase();
+    const spam = ["100% безкоштовно", "збільшення продажів", "тільки сьогодні", "не видаляйте"];
+    const found = spam.some(word => s.includes(word));
+    document.getElementById("r6").innerText = found ? "⚠️ Це спам!" : "✅ Спаму не знайдено.";
+  }
+
+  function task7() {
+    const s = document.getElementById("t7str").value;
+    const max = parseInt(document.getElementById("t7len").value);
+    let res = s;
+    if (s.length > max) {
+      res = s.slice(0, max - 3) + "...";
+    }
+    document.getElementById("r7").innerText = res;
+  }
+
+  function task810() {
+    const s = document.getElementById("t810").value;
+    let res = "";
+    for (let i = 0; i < s.length; i += 2) res += s[i];
+    document.getElementById("r810").innerText = res;
+  }
+
+  function task910() {
+    let s = document.getElementById("t910str").value;
+    const a = document.getElementById("t910a").value;
+    const b = document.getElementById("t910b").value;
+    s = s.split("").map(ch => ch === a ? b : ch === b ? a : ch).join("");
+    document.getElementById("r910").innerText = s;
+  }
+
+  function task1010() {
+    const s = document.getElementById("t1010").value;
+    let maxSub = "";
+    let current = s[0] || "";
+    for (let i = 1; i < s.length; i++) {
+      if (s[i] === s[i-1]) {
+        current += s[i];
+      } else {
+        if (current.length > maxSub.length) maxSub = current;
+        current = s[i];
+      }
+    }
+    if (current.length > maxSub.length) maxSub = current;
+    const res = maxSub.length >= 3 ? `✅ true, підрядок: ${maxSub}` : "❌ false";
+    document.getElementById("r1010").innerText = res;
+  }
+</script>
+
+</body>
+</html>

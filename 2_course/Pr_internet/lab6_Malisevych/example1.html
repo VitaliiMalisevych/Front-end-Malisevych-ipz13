@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 1</title>
+</head>
+<body>
+<a style="display: block; text-align: left" href="lab6_prev.html">На lab6</a>
+
+<script>
+  let s = "dwbyu@mail.ua";
+  let r = /^([a-z0-9]+)(\.[a-z0-9]+)*@([a-z0-9]+)(\.[a-z0-9]+)*$/i;
+  let a = s.match(r);
+
+  if (a) {
+    for (let i = 0; i < a.length; i++) {
+      document.writeln("<hr> a[" + i + "]: " + a[i]);
+    }
+  } else {
+    document.write("E-mail не відповідає формату!");
+  }
+</script>
+
+</body>
+</html>
