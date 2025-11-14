@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoolContent</title>
+
     <style>
+        :root {
+            --bg: #666;
+            --text: white;
+            --tab-bg: #444;
+            --tab-hover: #555;
+            --tab-active: darkred;
+            --box-bg: #d9d9d9;
+            --box-border: darkred;
+            --content-text: #000;
+        }
+
+        body.light {
+            --bg: #eee;
+            --text: #222;
+            --tab-bg: #ddd;
+            --tab-hover: #ccc;
+            --tab-active: #8b0000;
+            --box-bg: #fff;
+            --box-border: #8b0000;
+            --content-text: #333;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            background: #666; /* темно-сірий фон */
+            background: var(--bg);
             font-family: "Andale Mono", monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            transition: 0.3s;
         }
 
         #tabbed_box {
@@ -21,9 +45,27 @@
         }
 
         h1 {
-            color: white;
+            color: var(--text);
             font-size: 22px;
             margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* кнопка теми */
+        #themeBtn {
+            padding: 5px 12px;
+            font-size: 14px;
+            background: var(--tab-bg);
+            color: var(--text);
+            border: 1px solid var(--text);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        #themeBtn:hover {
+            background: var(--tab-hover);
         }
 
         ul.tabs {
@@ -35,27 +77,27 @@
         }
 
         ul.tabs li a {
-            color: white;
+            color: var(--text);
             text-decoration: none;
             font-size: 18px;
             padding: 6px 10px;
             border-radius: 5px 5px 0 0;
-            background: #444;
+            background: var(--tab-bg);
             transition: 0.2s;
         }
 
         ul.tabs li a:hover {
-            background: #555;
+            background: var(--tab-hover);
         }
 
         ul.tabs li a.active {
-            background: darkred;
+            background: var(--tab-active);
             color: white;
         }
 
         .content-box {
-            background: #d9d9d9;
-            border: 10px solid darkred;
+            background: var(--box-bg);
+            border: 10px solid var(--box-border);
             width: 450px;
             height: 350px;
             padding: 30px 40px;
@@ -63,10 +105,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            transition: 0.3s;
         }
 
         .content {
             display: none;
+            color: var(--content-text);
         }
 
         .content.active {
@@ -82,9 +126,12 @@
 </head>
 <body>
 
-
 <div id="tabbed_box">
-    <h1>CoolContent</h1>
+    <h1>
+        CoolContent
+        <button id="themeBtn">Темна тема</button>
+    </h1>
+
     <ul class="tabs">
         <li><a href="javascript:tabSwitch('tab_1','content_1');" id="tab_1" class="active">Archives</a></li>
         <li><a href="javascript:tabSwitch('tab_2','content_2');" id="tab_2">Topics</a></li>
@@ -131,6 +178,17 @@
         document.getElementById(new_tab).classList.add('active');
         document.getElementById(new_content).classList.add('active');
     }
+
+    const themeBtn = document.getElementById("themeBtn");
+    themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+
+        if (document.body.classList.contains("light")) {
+            themeBtn.textContent = "Світла тема";
+        } else {
+            themeBtn.textContent = "Темна тема";
+        }
+    });
 </script>
 
 </body>
