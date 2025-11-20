@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 10</title>
+
+  <script src="JS/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    .hoverDiv {
+      width: 200px;
+      height: 80px;
+      background: #eee;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .hoverActive {
+      background: #cce5ff;
+      border: 2px solid #3399ff;
+    }
+
+    .clickedStyle {
+      border: 3px solid red;
+      background: #ffdddd;
+    }
+
+    #imageBox {
+      margin-top: 10px;
+      display: none;
+    }
+
+    #imageBox img {
+      width: 200px;
+      cursor: pointer;
+    }
+
+    #tooltip {
+      display: none;
+      background: black;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      position: absolute;
+    }
+
+    #resultMsg {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+
+      alert("jQuery готовий!");
+
+
+      var $text = $('#hide_text');
+      $text.hide();
+
+      $('.button').click(function () {
+        $text.show(200);
+      });
+
+      $("p:first").text("DOM first!");
+      $("p:last").text("DOM last!");
+
+      $(".hoverDiv").hover(
+              function () {
+                $(this).addClass("hoverActive");
+              },
+              function () {
+                $(this).removeClass("hoverActive");
+              }
+      );
+
+
+
+      // 1) Клік / двоклік по div
+      $("#clickDiv").bind("click", function () {
+        $(this).addClass("clickedStyle");
+      });
+
+      $("#clickDiv").bind("dblclick", function () {
+        $(this).removeClass("clickedStyle");
+      });
+
+      // 2) Кнопки
+      $("#btn1").bind("click", function () {
+        alert("Одинарний клік");
+      });
+
+      $("#btn2").bind("dblclick", function () {
+        alert("Подвійний клік");
+      });
+
+      $("#showImg").click(function () {
+        $("#imageBox").show(300);
+      });
+
+      $("#imageBox img").click(function () {
+        $("#imageBox").hide(300);
+      });
+
+      $("#imageBox img").mouseover(function (e) {
+        $("#tooltip")
+                .text("Це моє зображення!")
+                .css({ top: e.pageY + 10, left: e.pageX + 10 })
+                .show();
+      });
+
+      $("#imageBox img").mouseout(function () {
+        $("#tooltip").hide();
+      });
+
+
+      $("#checkForm").submit(function () {
+        const input = $("#inputWord").val().trim().toLowerCase();
+
+        if (input === "ІПЗ") {
+          $("#resultMsg")
+                  .text("Успішно! Ви ввели правильне слово.")
+                  .css("color", "green")
+                  .show();
+
+          alert("Успішно!");
+          return true;
+        }
+
+        $("#resultMsg")
+                .text("Помилка! Спробуйте ще раз.")
+                .css("color", "red")
+                .show()
+                .fadeOut(2000);
+
+        return false;
+      });
+
+    });
+  </script>
+
+</head>
+<body>
+<a style="display: block; text-align: left" href="../Pr-index.html">На головну</a>
+
+<h3>Завдання 1</h3>
+
+<a href="#" class="button">Натисніть, щоб показати текст</a>
+<div id="hide_text">ІПЗ топ</div>
+
+<hr>
+
+<h3>Завдання 2</h3>
+
+<p>Перший абзац </p>
+<p>Другий абзац </p>
+<p>Останній абзац </p>
+
+<div class="hoverDiv">Наведи мишкою на мене</div>
+
+<hr>
+
+<h3>Завдання 3</h3>
+
+<h4>Клік та двоклік по div</h4>
+<div id="clickDiv" style="width:200px;height:80px;border:1px solid #000;padding:10px;">
+  Клікай по мені
+</div>
+
+<br>
+
+<h4>Окремі кнопки</h4>
+<button id="btn1">Одинарний клік</button>
+<button id="btn2">Подвійний клік</button>
+
+<br><br>
+
+<h4>Показ зображення</h4>
+<a href="#" id="showImg">Показати зображення</a>
+
+<div id="imageBox">
+  <img src="image/1384.970.jpg" alt="img">
+</div>
+
+<div id="tooltip"></div>
+
+<hr>
+
+<h3>Форма перевірки</h3>
+
+<p>Введіть у текстове поле слово <strong>«ІПЗ»</strong>.</p>
+
+<form id="checkForm" action="javascript:void(0);">
+  <div>
+    <input type="text" id="inputWord" placeholder="Введіть слово тут">
+    <input type="submit" value="Перевірити">
+  </div>
+</form>
+
+<span id="resultMsg"></span>
+
+</body>
+</html>

@@ -45,11 +45,10 @@
     const index = document.getElementById("index").value.trim();
     const result = document.getElementById("result");
 
-    // Регулярні вирази
     const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
     const nameRegex = /^[А-Яа-яЇїІіЄєҐґA-Za-z\s'-]{2,}$/;
     const loginRegex = /^[a-zA-Z0-9_]{4,20}$/;
-    const passwordRegex = /^[A-Za-z0-9!@#$%^&*()_+=-]{6,}$/;
+    const passwordRegex = /^[A-Za-z0-9!@#$%^&*()_]{8,}$/;
     const indexRegex = /^[0-9]{5}$/;
 
     let errors = [];
@@ -57,7 +56,7 @@
     if (!emailRegex.test(email)) errors.push("Невірний формат e-mail");
     if (!nameRegex.test(name)) errors.push("Некоректне ім’я або прізвище");
     if (!loginRegex.test(login)) errors.push("Логін повинен містити 4–20 символів (латиниця або цифри)");
-    if (!passwordRegex.test(password)) errors.push("Пароль має містити мінімум 6 символів");
+    if (!passwordRegex.test(password)) errors.push("Пароль має містити мінімум 8 символів");
     if (!indexRegex.test(index)) errors.push("Поштовий індекс має складатися з 5 цифр");
 
     if (errors.length > 0) {
