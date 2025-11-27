@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 110</title>
+  <script src="../lab10_Malisevych/JS/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button { padding: 6px 12px; margin: 4px; }
+    li, div.box { padding: 5px; margin: 5px 0; border: 1px solid #888; }
+    .highlight { background: yellow; }
+  </style>
+</head>
+<body>
+
+<h1>Лабораторна робота 11 - варіант 10</h1>
+
+<h2>Завдання 1</h2>
+
+<div id="z1" class="box" title="початковий title">Початковий текст</div>
+
+<br>
+<label>HTML для .html(): </label>
+<input id="inpHtml" value="Новий HTML">
+<br>
+<label>Input для .val(): </label>
+<input id="inpVal" value="Hello">
+<br><br>
+
+<button id="btn_html">.html()</button>
+<button id="btn_css">.css()</button>
+<button id="btn_val">.val()</button>
+<button id="btn_attr_name">.attr(name)</button>
+<button id="btn_attr_nv">.attr(name,value)</button>
+<button id="btn_attr_obj">.attr(attributes)</button>
+<button id="btn_attr_func">.attr(name,function)</button>
+<button id="btn_removeAttr">.removeAttr()</button>
+
+<div id="log1" style="margin-top:10px; padding:10px; border:1px dashed #777;">
+  Лог: натисни кнопку, щоб побачити результат
+</div>
+
+<script>
+  $("#btn_html").click(() => {
+    const txt = $("#inpHtml").val();
+    $("#z1").html("<b>" + txt + "</b>");
+    $("#log1").text(".html() → HTML змінено на: " + txt);
+  });
+
+  $("#btn_css").click(() => {
+    $("#z1").css({ background: "teal", color: "white", padding: "10px" });
+    $("#log1").text(".css() → блок стилізовано");
+  });
+
+  $("#btn_val").click(() => {
+    $("#log1").text(".val() → значення input: " + $("#inpVal").val());
+  });
+
+  $("#btn_attr_name").click(() => {
+    $("#log1").text(".attr('class') → " + $("#z1").attr("class"));
+  });
+
+  $("#btn_attr_nv").click(() => {
+    $("#z1").attr("title", "Новий title");
+    $("#log1").text(".attr('title','Новий title') → наведiть мишку на блок");
+  });
+
+  $("#btn_attr_obj").click(() => {
+    $("#z1").attr({ "data-a": "111", "data-b": "222" });
+    $("#log1").text(".attr({}) → data-a=111, data-b=222 додано");
+  });
+
+  $("#btn_attr_func").click(() => {
+    $("#z1").attr("data-len", () => $("#z1").text().length);
+    $("#log1").text(".attr(name,function) → data-len = " + $("#z1").attr("data-len"));
+  });
+
+  $("#btn_removeAttr").click(() => {
+    $("#z1").removeAttr("title");
+    $("#log1").text(".removeAttr('title') → title видалено");
+  });
+</script>
+
+<h2>Завдання 2</h2>
+
+<div id="zone" class="box">ZONE</div>
+
+<button id="btn_wrapInner">wrapInner()</button>
+<button id="btn_clone">clone()</button>
+<button id="btn_innerHeight">innerHeight(функція)</button>
+<button id="btn_outerHeight">outerHeight()</button>
+
+<script>
+  $("#btn_wrapInner").click(() => {
+    $("#zone").wrapInner("<div style='background:lightblue;padding:5px;'>");
+  });
+
+  $("#btn_clone").click(() => {
+    $("#zone").after($("#zone").clone());
+  });
+
+  $("#btn_innerHeight").click(() => {
+    $("#zone").innerHeight(function(i, oldHeight){
+      return oldHeight + 20; // збільшити висоту
+    });
+  });
+
+  $("#btn_outerHeight").click(() => {
+    alert("outerHeight: " + $("#zone").outerHeight());
+  });
+</script>
+
+
+
+<h2>Завдання 3</h2>
+
+<ul id="list3">
+  <li>Елемент 1</li>
+  <li>Елемент 2</li>
+  <li>Елемент 3</li>
+  <li>Елемент 4</li>
+  <li>Елемент 5</li>
+</ul>
+
+<button id="btn_first">.first()</button>
+<button id="btn_offsetParent">.offsetParent()</button>
+<button id="btn_find">.find()</button>
+<button id="btn_slice">.slice()</button>
+<button id="btn_not">.not()</button>
+
+<script>
+  $("#btn_first").click(() => {
+    $("#list3 li").removeClass("highlight");
+    $("#list3 li").first().addClass("highlight");
+  });
+
+  $("#btn_offsetParent").click(() => {
+    let p = $("#list3").offsetParent().prop("tagName");
+    alert("offsetParent: " + p);
+  });
+
+  $("#btn_find").click(() => {
+    $("#list3").find("li:contains('3')").addClass("highlight");
+  });
+
+  $("#btn_slice").click(() => {
+    $("#list3 li").removeClass("highlight");
+    $("#list3 li").slice(1,4).addClass("highlight");
+  });
+
+  $("#btn_not").click(() => {
+    $("#list3 li").removeClass("highlight");
+    $("#list3 li").not(":contains('3')").addClass("highlight");
+  });
+</script>
+
+
+
+<h2>Завдання 4</h2>
+
+<ul id="filterList">
+  <li class="mod">A</li>
+  <li>B</li>
+  <li class="mod">C</li>
+  <li>D</li>
+  <li class="mod">E</li>
+</ul>
+
+<button id="btn_filter_class">filter(.mod)</button>
+<button id="btn_filter_3rd">filter(кожен 3-й)</button>
+
+<script>
+  $("#btn_filter_class").click(() => {
+    $("#filterList li")
+            .filter(".mod")
+            .css("background","lightgreen")
+            .append(" — modify");
+  });
+
+  $("#btn_filter_3rd").click(() => {
+    $("#filterList li")
+            .filter(":nth-child(3n)")
+            .css("background","orange")
+            .append(" — modify");
+  });
+</script>
+
+
+
+<h2>Завдання 5</h2>
+
+<button id="btn_methods">Виконати методи</button>
+
+<pre id="out" style="background:#eee;padding:10px;"></pre>
+
+<script>
+  $("#btn_methods").click(() => {
+
+    let out = "";
+
+    out += "$.isNumeric('123'): " + $.isNumeric("123") + "\n";
+    out += "$.isNumeric('abc'): " + $.isNumeric("abc") + "\n\n";
+
+    out += "$.isPlainObject({a:1}): " + $.isPlainObject({a:1}) + "\n";
+    out += "$.isPlainObject([]): " + $.isPlainObject([]) + "\n\n";
+
+    let arr = $.makeArray("ABC");
+    out += "$.makeArray('ABC'): " + arr + "\n\n";
+
+    out += "$.map([1,2,3], x=>x*10): ";
+    out += $.map([1,2,3], x => x * 10) + "\n";
+
+    $("#out").text(out);
+  });
+</script>
+
+</body>
+</html>
