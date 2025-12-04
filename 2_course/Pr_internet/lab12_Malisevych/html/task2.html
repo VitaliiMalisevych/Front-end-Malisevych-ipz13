@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>Lab 12 — Анімований логотип ІПЗ</title>
+
+  <script src="../../lab10_Malisevych/JS/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      background:#0f1720;
+      color:#E6EEF6;
+      font-family: Arial, sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+
+    #logoBtn{
+      width:160px;
+      height:160px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+  </style>
+</head>
+
+<body>
+<a style="display: block; text-align: left" href="../lab12.html">На lab12</a>
+
+<div id="logoBtn">
+  <svg width="160" height="160" viewBox="0 0 160 160"
+       xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#7C3AED" />
+        <stop offset="100%" stop-color="#06B6D4" />
+      </linearGradient>
+
+      <radialGradient id="shine" cx="30%" cy="25%">
+        <stop offset="0%" stop-color="white" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="white" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <circle cx="80" cy="80" r="64" fill="url(#g1)"></circle>
+    <circle cx="80" cy="80" r="64" fill="url(#shine)"
+            style="mix-blend-mode:screen"></circle>
+
+    <g transform="translate(80,86)">
+      <text x="-48" y="-6" font-size="34" text-anchor="middle"
+            fill="white" font-weight="700">І</text>
+      <text x="0" y="-6" font-size="34" text-anchor="middle"
+            fill="white" font-weight="700">П</text>
+      <text x="48" y="-6" font-size="34" text-anchor="middle"
+            fill="white" font-weight="700">З</text>
+    </g>
+  </svg>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+
+    $("#logoBtn").click(function(){
+
+      $("#logoBtn").animate(
+              {
+                width: "220px",
+                height: "220px",
+                opacity: 0.6,
+                borderRadius: "30px"
+              },
+              {
+                duration: 1500,
+                easing: "swing",
+
+                start: function(){
+                  console.log("Анімація розпочалась");
+                },
+
+                step: function(now, fx){
+                  if(fx.prop === "opacity"){
+                    $("#logoBtn").css("box-shadow",
+                            "0 0 " + (now*30) + "px #7C3AED");
+                  }
+                },
+
+                complete: function(){
+                  console.log("Анімація завершена");
+                  $("#logoBtn").animate({
+                    width:"160px",
+                    height:"160px",
+                    opacity:1,
+                    borderRadius:"0px"
+                  }, 900);
+                },
+
+                queue:false
+              }
+      );
+
+    });
+
+  });
+</script>
+
+</body>
+</html>

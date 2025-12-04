@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <title>lab 12</title>
+
+    <script src="../../lab10_Malisevych/JS/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            background: #0f1720;
+            color: #E6EEF6;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: #7C3AED;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .glow {
+            text-shadow: 0 0 12px #7C3AED;
+            color: #06B6D4 !important;
+        }
+    </style>
+</head>
+
+<body>
+<a style="display: block; text-align: left" href="../lab12.html">На lab12</a>
+
+<h1 id="title">Демонстрація методів jQuery</h1>
+
+<div id="box"></div>
+
+<button id="btn">Виконати анімацію</button>
+
+<script>
+    $(document).ready(function(){
+
+
+        $("#btn").click(function(){
+            $("#box")
+                .fadeOut(600)
+                .delay(600)
+                .fadeIn(600);
+        });
+
+        $("#box").queue(function(next){
+            console.log("Елемент пройшов dequeue()");
+            $(this).css("border", "4px solid #06B6D4");
+            next();
+        });
+
+        $("#box").click(function(){
+            $(this).fadeOut(800).fadeIn(800);
+        });
+
+
+
+        $("#title").click(function(){
+            $(this).slideUp(400).slideDown(400);
+        });
+
+        $("#box").hover(
+            function(){ $(this).fadeTo(300, 0.5); },
+            function(){ $(this).fadeTo(300, 1); }
+        );
+
+        $("h1").dblclick(function(){
+            $(this).toggleClass("glow");
+        });
+
+    });
+</script>
+
+</body>
+</html>
